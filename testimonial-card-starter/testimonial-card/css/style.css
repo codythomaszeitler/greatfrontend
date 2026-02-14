@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: gray;
 }
 
 * {
@@ -28,4 +29,36 @@ body {
 .credits a {
   color: #000;
   font-weight: bold;
+}
+
+
+.desktop-card {
+  width: 340px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px;
+}
+
+.user-header-with-image {
+  display: flex;
+  gap: 16px;
+}
+
+.user-header {
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+}
+
+.user-name {
+  font-weight: 450;
+  font-size: large;
+}
+
+.user-twitter-handle{
+  font-weight: 100;
+  font-size: small;
 }
