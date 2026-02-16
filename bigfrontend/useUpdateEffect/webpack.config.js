@@ -23,6 +23,11 @@ module.exports = {
             }
         ]
     },
+    devServer : {
+        static : path.resolve(__dirname, ""),
+        open : true,
+        port: 9000
+    },
     resolve: {
     },
     devtool: 'source-map',
