@@ -1,9 +1,10 @@
 'use strict';
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-    entry: './index.jsx',
+    entry: './index.js',
     context: path.resolve(__dirname),
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -12,7 +13,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?jsx$/,
+                test: /\.m?js$/,
                 exclude : /node_modules/,
                 use : {
                     loader : "babel-loader",
@@ -24,7 +25,7 @@ module.exports = {
         ]
     },
     devServer : {
-        static : path.resolve(__dirname, ""),
+        static : path.resolve(__dirname, "dist"),
         open : true,
         port: 9000
     },
@@ -32,5 +33,10 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
-    ]
+        new HtmlWebpackPlugin({
+            title : "My Webpack App", 
+            template : "./index.html"
+        })
+    ],
+    mode : 'development'
 };

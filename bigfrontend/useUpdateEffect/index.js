@@ -8,4 +8,4 @@ document.body.innerHTML = '<div id="app"></div>'
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, World</h1>)
 
-console.log('we are within index.jsx');
+console.log('we are within index.js');
