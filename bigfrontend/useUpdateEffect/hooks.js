@@ -4,10 +4,12 @@ export function useUpdateEffect(effect, deps) {
     const ref = useRef(false);
 
     useEffect(() => {
-        if (!ref.current) {
-            ref.current = true;
-        } else {
+        if (ref.current) {
             return effect();
         }
     }, deps);
+
+    useEffect(() => {
+        ref.current = true;
+    }, []);
 }

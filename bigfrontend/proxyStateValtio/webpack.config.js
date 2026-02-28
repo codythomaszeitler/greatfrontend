@@ -1,6 +1,7 @@
 'use strict';
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -13,10 +14,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
-                exclude : [/node_modules/, '*test*'],
-                use : {
-                    loader : "babel-loader",
+                test: /.js$/,
+                exclude: /node_modules/,
+                use  : {
+                    loader : 'babel-loader',
                     options : {
                         presets : ["@babel/preset-env", ["@babel/preset-react", {runtime : 'automatic'}]]
                     }
@@ -24,19 +25,11 @@ module.exports = {
             }
         ]
     },
-    devServer : {
-        static : path.resolve(__dirname, "dist"),
-        open : true,
-        port: 9000
-    },
     resolve: {
     },
     devtool: 'source-map',
     plugins: [
-        new HtmlWebpackPlugin({
-            title : "My Webpack App", 
-            template : "./index.html"
-        })
-    ],
+        new HtmlWebpackPlugin()
+    ], 
     mode : 'development'
 };

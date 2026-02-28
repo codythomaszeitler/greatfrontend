@@ -1,16 +1,9 @@
-import { useState } from "react";
 import { useUpdateEffect } from "./hooks"
 
-export function UseUpdateEffectWrapper() {
-    useUpdateEffect(() => {
-        console.log('--- this should only be called after the first render ---');
-    });
-
-
-    const [_, setCount] = useState(0);
-    setTimeout(() => {
-        setCount((count) => count + 1);
-    }, 5000);
-
+// Okay well that's interesting.
+// If  you pass in a [] - then you would only run on first render...
+// is that what this is trying to accomplish?
+export function UseUpdateEffectWrapper({onSecondRender}) {
+    useUpdateEffect(onSecondRender);
     return (<div>Use Update Effect Wrapper</div>)
 }
