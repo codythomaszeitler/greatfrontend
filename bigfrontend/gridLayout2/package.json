@@ -1,0 +1,20 @@
+{
+  "name": "gridlayout2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop" : "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^13.0.1",
+    "html-webpack-plugin": "^5.6.6",
+    "webpack": "^5.105.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
